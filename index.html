@@ -8,189 +8,98 @@
     <title>Best cafe in Muzaffarpur</title>
     <style>
      
-/* Css reset */
+/* Common styles */
 
+/* Css reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width and height */
+
 }
 
 /* Css Variables */
-*root {
-    --navbar-height: 59px
+:root {
+    --navbar-height: 59px;
 }
 
 /* Navigation bar */
-
 #navbar {
     display: flex;
     align-items: center;
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
-    height: 82px;
-
+    height: var(--navbar-height);
+    z-index: 1000; /* Increased z-index to ensure navigation bar is on top of other content */
 }
 
-#navbar::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.4;
+/* ... Other existing styles ... */
+
+/* Media queries for laptop screens */
+@media screen and (min-width: 1024px) {
+    /* Navigation bar */
+    #navbar {
+        height: var(--navbar-height); /* You might want to adjust the height for laptops */
+    }
+
+    /* Home section */
+    #home {
+        padding: 100px 200px; /* Increased padding for laptops */
+    }
+
+    /* Services Section */
+    #services {
+        margin: -5px;
+        display: flex;
+        justify-content: space-around; /* Adjusted layout for better spacing on laptops */
+    }
+
+    /* Client section */
+    #client-section {
+        height: auto; /* Adjusted height for laptops */
+    }
 }
 
-/*Navigation bar: Logo and Image */
-#logo {
-    margin: 3px 20px;
+/* Media queries for phone screens */
+@media screen and (max-width: 767px) {
+    /* Navigation bar */
+    #navbar {
+        flex-direction: column; /* Changed direction to vertical for phones */
+        height: auto; /* Adjusted height for phones */
+    }
 
+    /* Logo */
+    #logo {
+        margin-bottom: 20px; /* Added space below the logo for phones */
+    }
+
+    /* ... Other existing styles ... */
+
+    /* Home section */
+    #home {
+        padding: 50px 20px; /* Reduced padding for phones */
+    }
+
+    /* Services Section */
+    #services {
+        flex-direction: column; /* Changed direction to vertical for phones */
+        align-items: center; /* Centered items vertically for phones */
+    }
+
+    /* Services box */
+    #services .box {
+        width: 80%; /* Adjusted width for phones */
+        margin: 20px 0; /* Added space between boxes for phones */
+    }
+
+    /* Client section */
+    #client-section {
+        height: auto; /* Adjusted height for phones */
+    }
 }
 
-#logo img {
-    height: 75px;
-    margin: -10px 6px;
-    border-radius: 100px;
-
-}
-
-/*Navigation bar: List styling */
-#navbar ul {
-    display: flex;
-    font-family: 'Baloo Bhai';
-
-}
-
-
-#navbar ul li {
-    list-style-type: none;
-    font-size: 1.3rem;
-
-}
-
-#navbar ul li a {
-    color: white;
-    display: block;
-    padding: 3px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-#navbar ul li a:hover {
-    color: black;
-    background-color: white;
-}
-
-/* Home section 
- #welcome{
-    text-shadow: 5px 5px rgb(194, 143, 143); 
- } */
-#home {
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-    padding: 3px 200px;
-    justify-content: center;
-    align-items: center;
-}
-
-#home::before {
-    content: "";
-    background: url('unsplash.jpg') no-repeat center center/cover;
-
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 70%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.89;
-
-}
-
-#home h1 {
-    color: white;
-    text-align: center;
-    font-family: 'Bree Serif', serif;
-}
-
-#home p {
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    font-family: 'Bree Serif', serif;
-}
-
-/* Services Section */
-#services {
-    margin: -5px;
-    display: flex;
-
-}
-
-#services .box {
-    border: 2px solid brown;
-    text-align: center;
-    padding: 34px;
-    margin: 3px 6px;
-    border-radius: 23px;
-    background: #f2f2f2;
-
-}
-
-#services .box img {
-    height: 120px;
-    display: block;
-    margin: auto;
-}
-/* client section */
-#client-section{
-    height: 344px;
-}
-.client-item{
-    padding: 34px;
-}
-
-#clients{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#clients img{
-    height: 115px;
-}
-
-/* Utility Classes */
-.h-primary {
-    font-size: 3rem;
-    padding: 12px;
-    text-align: center;
-    /* font-family: 'Bree Serif', serif; */
-
-
-}
-
-.h-secondary {
-    font-size: 2.3rem;
-    padding: 12px;
-    font-family: 'Bree Serif', serif;
-
-}
-
-.btn {
-    padding: 6px 20px;
-    border: 2px solid white;
-    background-color: brown;
-    color: white;
-    margin: 17px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
