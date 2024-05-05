@@ -8,187 +8,144 @@
     <title>Best cafe in Muzaffarpur</title>
     <style>
         /* Css reset */
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* Css Variables */
-*root {
-    --navbar-height: 59px
-}
-
-/* Navigation bar */
-
-#navbar {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 82px;
-
-}
-
-#navbar::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.4;
-}
-
-/*Navigation bar: Logo and Image */
-#logo {
-    margin: 3px 20px;
-
-}
-
-#logo img {
-    height: 75px;
-    margin: -10px 6px;
-    border-radius: 100px;
-
-}
-
-/*Navigation bar: List styling */
-#navbar ul {
-    display: flex;
-    font-family: 'Baloo Bhai';
-
-}
-
-
-#navbar ul li {
-    list-style-type: none;
-    font-size: 1.3rem;
-
-}
-
-#navbar ul li a {
-    color: white;
-    display: block;
-    padding: 3px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-#navbar ul li a:hover {
-    color: black;
-    background-color: white;
-}
-
-/* Home section */
-/* #welcome{
-    text-shadow: 5px 5px rgb(194, 143, 143); */
-/* } */
-#home {
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-    padding: 3px 200px;
-    justify-content: center;
-    align-items: center;
-}
-
-#home::before {
-    content: "";
-    background: url('../pooja-chaudhary-q66grqqHpDQ-unsplash.jpg') no-repeat center center/cover;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 70%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.89;
-
-}
-
-#home h1 {
-    color: white;
-    text-align: center;
-    font-family: 'Bree Serif', serif;
-}
-
-#home p {
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    font-family: 'Bree Serif', serif;
-}
-
-/* Services Section */
-#services {
-    margin: -5px;
-    display: flex;
-
-}
-
-#services .box {
-    border: 2px solid brown;
-    text-align: center;
-    padding: 34px;
-    margin: 3px 6px;
-    border-radius: 23px;
-    background: #f2f2f2;
-
-}
-
-#services .box img {
-    height: 120px;
-    display: block;
-    margin: auto;
-}
-/* client section */
-#client-section{
-    height: 344px;
-}
-.client-item{
-    padding: 34px;
-}
-
-#clients{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#clients img{
-    height: 115px;
-}
-
-/* Utility Classes */
-.h-primary {
-    font-size: 3rem;
-    padding: 12px;
-    text-align: center;
-    /* font-family: 'Bree Serif', serif; */
-
-
-}
-
-.h-secondary {
-    font-size: 2.3rem;
-    padding: 12px;
-    font-family: 'Bree Serif', serif;
-
-}
-
-.btn {
-    padding: 6px 20px;
-    border: 2px solid white;
-    background-color: brown;
-    color: white;
-    margin: 17px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Navigation bar */
+        
+        #navbar {
+            display: flex;
+            align-items: center;
+            height: var(--navbar-height, 82px);
+            background-color: black;
+            color: white;
+        }
+        
+        #navbar ul {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+        }
+        
+        #navbar ul li {
+            margin: 0 10px;
+        }
+        
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        #navbar ul li a:hover {
+            background-color: white;
+            color: black;
+        }
+        
+        /* Home section */
+        
+        #home {
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: url('../pooja-chaudhary-q66grqqHpDQ-unsplash.jpg') no-repeat center center/cover;
+            padding: 0 20px;
+        }
+        
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Bree Serif', serif;
+        }
+        
+        #home p {
+            font-size: 1.5rem;
+            font-family: 'Bree Serif', serif;
+        }
+        
+        #home button {
+            padding: 10px 30px;
+            border: none;
+            background-color: brown;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        #home button:hover {
+            background-color: white;
+            color: black;
+        }
+        
+        /* Services Section */
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .services {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .box {
+            flex: 1;
+            border: 2px solid brown;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 0 10px;
+            background-color: #f2f2f2;
+        }
+        
+        .box img {
+            height: 120px;
+            margin-bottom: 20px;
+        }
+        
+        /* Client section */
+        
+        #client-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .client-item {
+            margin: 0 10px;
+        }
+        
+        .client-item img {
+            height: 100px;
+        }
+        
+        /* Utility Classes */
+        
+        .h-primary {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .h-secondary {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
 </head>
@@ -196,47 +153,43 @@
 <body>
     <nav id="navbar">
         <div id="logo">
-            <img src="chinese point.png" alt="logo">
+            <img src="chinese_point.png" alt="logo">
         </div>
         <ul>
             <li class="item"><a href="#">Home</a></li>
             <li class="item"><a href="#">Services</a></li>
             <li class="item"><a href="menu.html">Menu</a></li>
             <li class="item"><a href="#">Contact Us</a></li>
-
         </ul>
     </nav>
     <section id="home">
         <h1 class="h-primary" id="welcome">Welcome to Chinese Point</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ad eius laudantium impedit, nesciunt
             assumenda! Nihil dicta officia.</p>
-
         <button class="btn">Order now</button>
     </section>
-    <section class="services.container">
-        <h1 class="h-primary center">Our Services</h1>
+    <section class="services container">
+        <h1 class="h-primary">Our Services</h1>
         <div id="services">
             <div class="box">
                 <img src="cook-5876388.png" alt="">
-                <h2 class="h-secondary center">24*7 Restaurant</h2>
+                <h2 class="h-secondary">24*7 Restaurant</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sequi labore corporis. Ipsam velit dicta fugiat! Magnam necessitatibus sapiente officiis.</p>
             </div>
             <div class="box">
                 <img src="3.png" alt="">
-                <h2 class="h-secondary center">Home Delivery</h2>
+                <h2 class="h-secondary">Home Delivery</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sequi labore corporis. Ipsam velit dicta fugiat! Magnam necessitatibus sapiente officiis.</p>
             </div>
             <div class="box">
                 <img src="banner-3181255.png" alt="">
-                <h2 class="h-secondary center">Event Organisation</h2>
+                <h2 class="h-secondary">Event Organisation</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sequi labore corporis. Ipsam velit dicta fugiat! Magnam necessitatibus sapiente officiis.</p>
             </div>
-           
         </div>
-
     </section>
     <section id="client-section">
-        <h1 class="h-primary center"> Our Clients</h1>
+        <h1 class="h-primary">Our Clients</h1>
         <div id="clients">
             <div class="client-item">
                 <img src="logo1.png" alt="Our client">
@@ -252,8 +205,6 @@
             </div>
         </div>
     </section>
-
-
 </body>
 
 </html>
